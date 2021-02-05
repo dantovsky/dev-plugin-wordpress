@@ -11,6 +11,24 @@ https://github.com/gabrielfroes/curso-desenvolvimento-plugins-wordpress/blob/mas
 Repositório dos estudos  
 https://github.com/dantovsky/dev-plugin-wordpress
 
+## Como rodar o ambiente de desenvolvimento
+
+A partir da pasta raiz:
+```
+sudo docker-compose up
+```
+
+Aceder o Wordpress no endereço ({ login: dante, pass: dante }):
+```
+http://localhost:8080/
+
+```
+
+Adiner
+```
+http://localhost:8888/
+```
+
 ## Preparar o tema para tradução
 
 Sempre que usamos texto, devemos envolvê-lo com a seguinte estrutura:

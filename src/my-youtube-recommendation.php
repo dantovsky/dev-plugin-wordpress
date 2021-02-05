@@ -61,9 +61,9 @@ require_once MY_YOUTUBE_RECOMMENDATION_PLUGIN_DIR . 'includes/class-my-youtube-r
 require_once MY_YOUTUBE_RECOMMENDATION_PLUGIN_DIR . 'includes/class-my-youtube-recommendation-shortcode.php';
 require_once MY_YOUTUBE_RECOMMENDATION_PLUGIN_DIR . 'includes/class-my-youtube-recommendation-widget.php';
 
-if (is_admin()) {
+//if (is_admin()) {
   require_once MY_YOUTUBE_RECOMMENDATION_PLUGIN_DIR . 'includes/class-my-youtube-recommendation-admin.php';
-}
+//}
 
 $my_my_yt_rec_admin = new My_Youtube_Recommendation_Admin(
     MY_YOUTUBE_RECOMMENDATION_BASENAME,
@@ -71,17 +71,3 @@ $my_my_yt_rec_admin = new My_Youtube_Recommendation_Admin(
     MY_YOUTUBE_RECOMMENDATION_JSON_FILENAME,
     MY_YOUTUBE_RECOMMENDATION_VERSION
 );
-
-/*
-
-Fatal error: Uncaught Error: Call to undefined function add_setting_section() in
-/var/www/html/wp-content/plugins/my-youtube-recommendation/includes/class-my-youtube-recommendation-admin.php:128 Stack trace:
-
-#0 /var/www/html/wp-includes/class-wp-hook.php(287): My_Youtube_Recommendation_Admin->page_init('')
-#1 /var/www/html/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
-#2 /var/www/html/wp-includes/plugin.php(484): WP_Hook->do_action(Array)
-#3 /var/www/html/wp-admin/admin.php(175): do_action('admin_init')
-#4 /var/www/html/wp-admin/plugins.php(10): require_once('/var/www/html/w...')
-#5 {main} thrown in /var/www/html/wp-content/plugins/my-youtube-recommendation/includes/class-my-youtube-recommendation-admin.php on line 128
-
-*/

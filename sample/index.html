@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Lista de Vídeos</title>
+    <style>
+        .container {
+            text-align: center;
+            margin: 0 auto;
+            width: 100%;
+            min-height: 500px;
+            padding: 10px;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="videos">Carregando...</div>
+    <div class="container" id="widget">Carregando...</div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        let my_yt_rec_ajax = {
+            url: 'http://127.0.0.1:5500/sample/videos.json'
+        }
+
+        MyYoutubeRecommendation.listCallbacks.push({
+            containerId: 'videos',
+            layout: 'list',
+            limit: 3,
+            lang: 'pt_BR',
+            callback: MyYoutubeRecommendation.buildList
+        })
+
+        MyYoutubeRecommendation.listCallbacks.push({
+            containerId: 'widget',
+            layout: 'grid',
+            limit: 12,
+            lang: 'en_US',
+            callback: MyYoutubeRecommendation.buildList
+        })
+
+        MyYoutubeRecommendation.loadVideos(my_yt_rec_ajax.url).then(value => {
+            console.log(value)
+            MyYoutubeRecommendation.listCallbacks.forEach(item => {
+                item.callback(value, item.containerId, item.layout, item.limit)
+            });
+        })
+    </script>
+</body>
+</html>
