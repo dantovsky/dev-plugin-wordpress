@@ -67,3 +67,13 @@ public function add_plugin_page () {
     );
 }
 ```
+
+## Endpoints
+
+- https://www.youtube.com/feeds/videos.xml?channel_id=UCFuIUoyHB12qpYa8Jpxoxow
+- https://www.youtube.com/channel/UCFuIUoyHB12qpYa8Jpxoxow
+- https://www.m.youtube.com/channel/UCFuIUoyHB12qpYa8Jpxoxow
+
+## Problemas
+
+- https://docs.docker.com/engine/install/linux-postinstall/
